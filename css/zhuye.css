@@ -1,0 +1,324 @@
+/* 全局样式 */
+* {
+	margin: 0 auto;
+	padding: 0;
+	border: 0;
+	background: none;
+}
+
+body {
+	font-family: "微软雅黑";
+	font-size: 16px;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+video {
+	position: fixed;
+	right: 0px;
+	bottom: 0px;
+	min-width: 100%;
+	min-height: 100%;
+	height: auto;
+	width: auto;
+	z-index: -11;
+	/* 置于最低层序,保证不影响其他内容展示 */
+}
+
+/*导航栏*/
+.nav {
+	width: 1024px;
+	height: 60px;
+	opacity: 0.5;
+	font-size: 20px;
+	margin: 50px auto 0;
+	text-align: center;
+}
+
+.nav li {
+	float: left;
+	width: 140px;
+	height: 56px;
+	line-height: 56px;
+	color: white;
+	text-align: center;
+}
+
+.nav li:hover {
+	background-color: #ddd;
+	color: black;
+}
+
+.nav ul li ul {
+	display: none;
+}
+
+.nav ul li:hover ul {
+	display: block;
+	position: absolute;
+
+}
+
+.nav ul li:hover ul li {
+	float: none;
+}
+
+.nav ul li:hover ul li:hover {
+	background-color: #54dd54;
+	color: black;
+}
+
+/* 头部 */
+.header {
+	text-align: center;
+	padding: 100px;
+	width: 1024px;
+
+}
+
+.header h1 {
+	color: #DDDDDD;
+	opacity: 0.7;
+	font-size: 50px;
+	margin-bottom: 25px;
+}
+
+.header input {
+	font-size: 20px;
+	text-align: center;
+}
+
+.enter {
+	width: 550px;
+	height: 50px;
+	border: none;
+	border-radius: 10px;
+	background-color: whitesmoke;
+	opacity: 0.5;
+}
+
+.search {
+	width: 120px;
+	height: 50px;
+	font-size: 20px;
+	background-color: #1b9916;
+	border-radius: 10px;
+	opacity: 0.8;
+	margin-top: 25px;
+	margin-left: 10px;
+}
+
+/* banner */
+.banner {
+	width: 1024px;
+	height: 576px;
+}
+
+/* 轮播图 */
+.container {
+	width: 1024px;
+	height: 576px;
+	border-radius: 2%;
+	display: inline-block;
+	overflow: hidden;
+	position: relative;
+	/* 设置相对定位，以便后面pic中图片设置绝对定位，能相对与container移动 */
+}
+
+.pic {
+	position: absolute;
+	width: 6144px;
+	height: 576px;
+	z-index: 1;
+	/* 设置堆叠顺序，供后续bottons轮播图序号参考 */
+}
+
+/* 限定图片大小 */
+.pic img {
+	float: left;
+	width: 1024px;
+	height: 576px;
+}
+
+/* 标题 */
+.title {
+	position: absolute;
+	z-index: 2;
+	color: white;
+	font-size: 30px;
+	bottom: 110px;
+	left: 50px;
+}
+
+/* 轮播图小图 */
+.bottons {
+	position: absolute;
+	z-index: 2;
+	bottom: 15px;
+	right: 20px;
+}
+
+.bottons img {
+	border: 1px solid white;
+	border-radius: 10%;
+	width: 128px;
+	height: 72px;
+	opacity: 0.5;
+	display: inline-block;
+	cursor: pointer;
+	/* 鼠标悬浮时光标形状 */
+}
+
+/* 当前小图高亮显示 */
+#pic_on {
+	width: 150px;
+	height: 84px;
+	opacity: 1;
+}
+
+/* 轮播图左右箭头 */
+.container .arrow {
+	position: absolute;
+	top: 35%;
+	color: dimgray;
+	padding: 0px 16px;
+	border-radius: 50%;
+	font-size: 50px;
+	z-index: 2;
+	display: none;
+	/* 默认隐藏 */
+}
+
+.container .arrow_left {
+	left: 10px;
+}
+
+.container .arrow_right {
+	right: 10px;
+}
+
+.container:hover .arrow {
+	display: block;
+	/* 鼠标悬浮在图片上时箭头显示 */
+}
+
+.container .arrow:hover {
+	background-color: #DDDDDD;
+	opacity: 0.5;
+}
+
+/* content模块 */
+.content {
+	width: 1140px;
+	position: relative;
+	padding-top: 50px;
+}
+
+.content .outer {
+	display: inline-block;
+	width: 280px;
+	position: relative;
+	margin: 0 auto 20px;
+	cursor: pointer;
+}
+
+/* 电影图片 */
+.content .outer .moviePoster {
+	padding: 5px 15px 10px;
+	z-index: 2;
+}
+
+.content .outer .moviePoster img {
+	width: 100%;
+	border-radius: 6px;
+	display: block;
+	margin: 0 auto;
+}
+
+/* 图片下方的介绍 */
+.content .outer .movieName {
+	text-align: center;
+	color: white;
+	font-weight: bolder;
+	font-size: 18px;
+	z-index: 1;
+}
+
+.content .outer .movieName span {
+	font-size: 14px;
+	font-weight: normal;
+}
+
+.content .outer .movieName p {
+	display: inline;
+	border-radius: 10px;
+	background-color: #1fad18;
+	padding: 0 10px;
+	margin-left: 10px;
+}
+
+/* 鼠标悬浮特效 */
+.content .outer .mouseHover {
+	display: none;
+	position: absolute;
+	width: 280px;
+	height: 110%;
+	color: white;
+	text-align: center;
+	z-index: 2;
+}
+
+.content .outer .mouseHover .background {
+	background-color: #00ff7f;
+	position: absolute;
+	width: 280px;
+	height: 100%;
+	opacity: 0.6;
+}
+
+.content .outer .mouseHover .b {
+	font-size: 50px;
+	position: absolute;
+	top: 2%;
+	right: 20px;
+}
+
+.content .outer .mouseHover .span {
+	font-size: 40px;
+	position: absolute;
+	top: 30%;
+	left: 0;
+	right: 0;
+}
+
+.content .outer .mouseHover .p {
+	position: absolute;
+	bottom: 2%;
+	left: 0;
+	right: 0;
+}
+
+.content .outer:hover .mouseHover {
+	display: block;
+}
+
+.content .outer:hover .movieName {
+	display: none;
+}
+
+/* 页脚 */
+.footer {
+	background: #4c4c4c;
+	text-align: center;
+	font-size: 20px;
+	color: white;
+	padding: 30px 0;
+	margin-top: 50px;
+}
